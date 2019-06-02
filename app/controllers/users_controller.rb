@@ -4,8 +4,22 @@ class UsersController < ApplicationController
   end
   
   post '/login' do
+    
+    redirect '/video-posts'
+  end
+  
+  get '/signup' do
+    erb :'users/signup'
+  end
+  
+  post '/signup' do
+    if params["username"] == "" || params["email"] == "" || params["password"] == ""
+      redirect '/signup'
+    end
+    
     user = User.create(params)
-    #binding.pry
+    session[:user_id] = user.id
+    
     redirect '/video-posts'
   end
 end
