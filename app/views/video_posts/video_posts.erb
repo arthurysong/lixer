@@ -1,4 +1,7 @@
 <h2>Lixer Feed</h2>
+<% if logged_in? %>
+<h3>Welcome, <%= @user.username %></h3>
+<% end %>
 <ul>
   <% VideoPost.all.each do |videopost| %>
   <li><a href=""><%= videopost.title %></a></li>
