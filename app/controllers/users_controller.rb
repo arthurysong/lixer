@@ -4,8 +4,15 @@ class UsersController < ApplicationController
   end
   
   post '/login' do
+    user = User.find_by(email: params["email"])
+    binding.pry
     
-    redirect '/video-posts'
+    if user && user.authenticate(params["password"])
+      session[:user_id] = user.id
+      redirect '/video-posts'
+    end
+    
+    redirect '/login'
   end
   
   get '/signup' do
