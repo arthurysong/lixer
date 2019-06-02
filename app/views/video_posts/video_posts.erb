@@ -9,6 +9,10 @@
 <br>
 <a href="/logout">Log Out</a>
 </h3>
+<% else %>
+<a href="/login">Log In</a>
+<br>
+<a href="/signup">Sign Up</a>
 <% end %>
 <ul>
   <% VideoPost.all.each do |videopost| %>

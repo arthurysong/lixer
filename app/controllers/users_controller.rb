@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
+ 
+  
   get '/login' do
+    if logged_in?
+      redirect '/video-posts'
+    end
     erb :'users/login'
   end
   
@@ -34,6 +39,8 @@ class UsersController < ApplicationController
     if logged_in?
       session.clear
       flash[:message] = "You have successfully logged out"
+      
     end
+    redirect '/video-posts'
   end
 end
