@@ -29,4 +29,11 @@ class UsersController < ApplicationController
     
     redirect '/video-posts'
   end
+  
+  get '/logout' do
+    if logged_in?
+      session.clear
+      flash[:message] = "You have successfully logged out"
+    end
+  end
 end
