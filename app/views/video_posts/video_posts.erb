@@ -1,0 +1,6 @@
+<h2>Lixer Feed</h2>
+<ul>
+  <% VideoPost.all.each do |videopost| %>
+  <li><a href=""><%= videopost.title %></a></li>
+  <% end %>
+</ul>
