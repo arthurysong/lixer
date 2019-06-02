@@ -1,3 +1,3 @@
-require './config/environment'
+require './bin/environment'
 
 run ApplicationController
