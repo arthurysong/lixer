@@ -40,7 +40,7 @@ class UsersController < ApplicationController
       session.clear
       flash[:message] = "You have successfully logged out"
       
+      erb :'video_posts/video_posts'
     end
-    redirect '/video-posts'
   end
 end
