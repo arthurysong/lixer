@@ -1,6 +1,7 @@
 <a href="/video-posts">Back to Feed</a>
 <h2><%= @videopost.title %></h2>
 <h3><%= @videopost.video_link %></h3>
+
 <form action="/video-posts/<%= @videopost.id %>/like" method="POST">
   <input type="submit" value="Like Video Post">
 </form>
