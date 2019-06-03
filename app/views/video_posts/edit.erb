@@ -1,1 +1,11 @@
 <h2>Edit Video '<%= @videopost.title %>'</h2>
+<h3>Link: <%= @videopost.video_link %></h3>
+<form action="/video-posts/<%= @videopost.id %>" method="POST">
+  <label for="title">New Title: </label>
+  <input type="text" name="title" id="title">
+  <br>
+  <label for="video_link">New Link: </label>
+  <input type="text" name="video_link" id="video_link">
+  <br>
+  <input type="submit" value="Edit Video">
+</form>
