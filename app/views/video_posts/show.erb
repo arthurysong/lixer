@@ -4,6 +4,8 @@
   <input type="submit" value="Like Video Post">
 </form>
 
-<form action="/video-posts/<%= @videopost.id %>/delete" method="POST">
-  <input type="submit" value="Delete Video Post">
-</form>
+<% if current_user == @videopost.creator %>
+  <form action="/video-posts/<%= @videopost.id %>/delete" method="POST">
+    <input type="submit" value="Delete Video Post">
+  </form>
+<% end %>
