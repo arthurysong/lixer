@@ -1,3 +1,12 @@
 body {
   font-family: Arial;
 }
+
+#userNav a {
+  padding: 0 10px;
+}
+
+#container {
+  width: 900px;
+  margin: 0 auto;
+}
