@@ -2,6 +2,10 @@ body {
   font-family: Arial;
 }
 
+#userNav {
+  margin-top: 20px;  
+}
+
 #userNav a {
   padding: 0 10px;
 }
@@ -28,4 +32,17 @@ div .video-post {
 .video-post a {
   font-weight: bold;
   text-decoration: none
+}
+
+input {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: auto;
+  padding: 12px 20px;
+  margin: 0 auto;
 }
