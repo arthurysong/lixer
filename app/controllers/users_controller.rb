@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       redirect '/video-posts'
     end
     
+    flash[:message] = "Invalid email and password combination"
     redirect '/login'
   end
   
