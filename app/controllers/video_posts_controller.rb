@@ -38,7 +38,7 @@ class VideoPostsController < ApplicationController
     user = current_user
     videopost = VideoPost.find(params[:id])
     if user.created_video_posts.include?(videopost)
-      user.created_video_posts.destroy(Tweet.find(params[:id]))
+      user.created_video_posts.destroy(VideoPost.find(params[:id]))
       user.save
     end
     redirect '/video-posts'
