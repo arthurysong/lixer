@@ -84,10 +84,20 @@ class VideoPostsController < ApplicationController
   end
   
   get '/video-posts/liked-video-posts' do
-    
+    if logged_in?
+      @user = current_user
+      
+      erb :'video_posts/liked_video_posts'
+    else
+      redirect '/login'
+    end
   end
   
   get '/video-posts/created-video-posts' do
-    
+    if logged_in?
+      
+    else
+      redirect '/login'
+    end
   end
 end
