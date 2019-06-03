@@ -23,6 +23,10 @@
 <h2>Lixer Feed</h2>
 <ul>
   <% VideoPost.all.each do |videopost| %>
-  <li><a href="/video-posts/<%= videopost.id %>"><%= videopost.title %></a></li>
+  <li>
+    <a href="/video-posts/<%= videopost.id %>"><%= videopost.title %></a>
+    <iframe width="420" height="345" src="<%= videopost.video_link %>">
+</iframe>
+  </li>
   <% end %>
 </ul>
