@@ -28,5 +28,8 @@ class VideoPostsController < ApplicationController
     redirect "/video-posts/#{videopost.id}"
   end
   
-  
+  get '/video-posts/:id' do
+    @user = User.find(params[:id])
+    
+  end
 end
