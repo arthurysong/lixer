@@ -35,12 +35,9 @@ class VideoPostsController < ApplicationController
   end
   
   post '/video-posts/:id/delete' do
-    user = current_user
-    videopost = VideoPost.find(params[:id])
-    if user.created_video_posts.include?(videopost)
-      user.created_video_posts.destroy(VideoPost.find(params[:id]))
-      user.save
-    end
+    user.created_video_posts.destroy(VideoPost.find(params[:id]))
+    user.save
+    
     redirect '/video-posts'
   end
 end
