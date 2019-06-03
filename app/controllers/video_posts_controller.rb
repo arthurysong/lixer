@@ -35,9 +35,9 @@ class VideoPostsController < ApplicationController
   end
   
   post '/video-posts/:id/delete' do
-    user = User.find(session[:user_id])
-    user.created_video_posts.destroy(VideoPost.find(params[:id]))
-    user.save
+    @user = User.find(session[:user_id])
+    @user.created_video_posts.destroy(VideoPost.find(params[:id]))
+    @user.save
     
     flash[:message] = "Successfully deleted video"
     erb :'video_posts/video_posts'
