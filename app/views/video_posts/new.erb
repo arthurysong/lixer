@@ -1,4 +1,8 @@
 <h2>Create Video Post</h2>
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <form action="/video-posts" method="POST">
   <label for="title">Title: </label>
   <input type="text" name="title" id="title">
