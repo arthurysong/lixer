@@ -18,6 +18,6 @@
 <% end %>
 <ul>
   <% VideoPost.all.each do |videopost| %>
-  <li><a href=""><%= videopost.title %></a></li>
+  <li><a href="/video-posts/<%= videopost.id %>"><%= videopost.title %></a></li>
   <% end %>
 </ul>

@@ -29,7 +29,8 @@ class VideoPostsController < ApplicationController
   end
   
   get '/video-posts/:id' do
-    @user = User.find(params[:id])
+    @videopost = VideoPost.find(params[:id])
     
+    erb :'video_posts/show'
   end
 end
