@@ -35,7 +35,7 @@ class VideoPostsController < ApplicationController
   end
   
   post '/video-posts/:id/delete' do
-    @user = User.find(session[:user_id])
+    @user = current_user
     @user.created_video_posts.destroy(VideoPost.find(params[:id]))
     @user.save
     
@@ -44,12 +44,12 @@ class VideoPostsController < ApplicationController
   end
   
   post '/video-posts/:id/like' do
-    @user = User.find(session[:user_id])
+    @user = current_user
     videopost = VideoPost.find(params[:id])
     @user.liked_video_posts << videopost
     @user.save
     
-    flash[:message] = "Successfully liked '#{videopost}'"
+    flash[:message] = "Successfully liked '#{videopost.title}'"
     erb :'video_posts/video_posts'
   end
 end
