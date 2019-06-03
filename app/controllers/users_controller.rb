@@ -27,13 +27,21 @@ class UsersController < ApplicationController
   
   post '/signup' do
     if params["username"] == "" || params["email"] == "" || params["password"] == ""
+      flash[:message] = "Please fill in all the forms"
+      
       redirect '/signup'
     end
     
-    user = User.create(params)
-    session[:user_id] = user.id
-    
-    redirect '/video-posts'
+    if !User.find_by(username: params["username"]) && !User.find_by(email: params["email"])
+      user = User.create(params)
+      session[:user_id] = user.id
+      
+      redirect '/video-posts'
+    else
+      flash[:message] = "User with entered username or email already exists"
+      
+      redirect '/signup'
+    end
   end
   
   get '/logout' do
