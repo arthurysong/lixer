@@ -58,4 +58,13 @@ class VideoPostsController < ApplicationController
     
     erb :'video_posts/edit'
   end
+  
+  post '/video-posts/:id' do
+    @videopost = VideoPost.find(params[:id])
+    if params["title"] == "" && params["video_link"] == ""
+      flash[:message] = "Please fill in at least one thing to edit"
+      
+      redirect "/video-posts/#{@videopost.id}/edit"
+    end
+  end
 end
