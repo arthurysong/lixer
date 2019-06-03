@@ -44,6 +44,12 @@ class VideoPostsController < ApplicationController
   end
   
   post '/video-posts/:id/like' do
+    @user = User.find(session[:user_id])
+    videopost = VideoPost.find(params[:id])
+    @user.liked_video_posts << videopost
+    @user.save
     
+    flash[:message] = "Successfully liked '#{videopost}'"
+    erb :'video_posts/video_posts'
   end
 end
