@@ -2,7 +2,8 @@
   <%= flash[:message] %>
 <% end %>
 
-<h2>Edit Video '<%= @videopost.title %>'</h2>
+<h2>Edit Video</h2>
+<h3>'<%= @videopost.title %>'</h3>
 <h3>Link: <%= @videopost.video_link %></h3>
 <form action="/video-posts/<%= @videopost.id %>" method="POST">
   <label for="title">New Title: </label>

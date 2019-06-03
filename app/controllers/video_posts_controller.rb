@@ -54,7 +54,10 @@ class VideoPostsController < ApplicationController
   end
   
   get '/video-posts/:id/edit' do
-    @video = VideoPost.find(params[:id])
+    @videopost = VideoPost.find(params[:id])
+    if @videopost.creator != current_user
+      redirect '/video-posts'
+    end
     
     erb :'video_posts/edit'
   end
