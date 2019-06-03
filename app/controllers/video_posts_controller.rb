@@ -28,6 +28,27 @@ class VideoPostsController < ApplicationController
     redirect "/video-posts/#{videopost.id}"
   end
   
+    
+  get '/video-posts/liked-video-posts' do
+    if logged_in?
+      @user = current_user
+      
+      erb :'video_posts/liked_video_posts'
+    else
+      redirect '/login'
+    end
+  end
+  
+  get '/video-posts/created-video-posts' do
+    if logged_in?
+      @user = current_user
+      
+      erb :'video_posts/created_video_posts'
+    else
+      redirect '/login'
+    end
+  end
+  
   get '/video-posts/:id' do
     @videopost = VideoPost.find(params[:id])
     
@@ -82,22 +103,5 @@ class VideoPostsController < ApplicationController
       redirect "/video-posts/#{params[:id]}"
     end
   end
-  
-  get '/video-posts/liked-video-posts' do
-    if logged_in?
-      @user = current_user
-      
-      erb :'video_posts/liked_video_posts'
-    else
-      redirect '/login'
-    end
-  end
-  
-  get '/video-posts/created-video-posts' do
-    if logged_in?
-      
-    else
-      redirect '/login'
-    end
-  end
+
 end

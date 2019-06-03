@@ -1,0 +1,6 @@
+<h2><%= @user.username %>'s Created Video Posts</h2>
+<ul>
+  <% @user.created_video_posts.each do |video_post| %>
+  <li><a href="/video-posts/<%= video_post.id %>"><%= video_post.title %></a></li>
+  <% end %>
+</ul>
