@@ -11,9 +11,13 @@ body {
   margin: 0 auto;
 }
 
-.video-post {
+ul {
+  list-style: none;
+}
+
+div .video-post {
   clear: left;
-  margin: 20px 0;
+  padding: 10px 0;
 }
 
 .video-post iframe {
