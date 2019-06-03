@@ -10,3 +10,13 @@ body {
   width: 900px;
   margin: 0 auto;
 }
+
+.video-post {
+  clear: left;
+  margin: 20px 0;
+}
+
+.video-post iframe {
+  float: left;
+  margin-right: 20px;
+}
