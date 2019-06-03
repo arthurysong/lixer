@@ -24,3 +24,8 @@ div .video-post {
   float: left;
   margin-right: 20px;
 }
+
+.video-post a {
+  font-weight: bold;
+  text-decoration: none
+}

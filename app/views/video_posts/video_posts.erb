@@ -27,6 +27,8 @@
       <iframe width="200" height="130" src="<%= videopost.video_link %>">
   </iframe>
       <a href="/video-posts/<%= videopost.id %>"><%= videopost.title %></a>
+      <br>
+      <p><%= videopost.creator.username %></p>
     </div>
   </li>
   <% end %>
