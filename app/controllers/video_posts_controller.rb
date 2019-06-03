@@ -52,4 +52,10 @@ class VideoPostsController < ApplicationController
     flash[:message] = "Successfully liked '#{videopost.title}'"
     redirect '/video-posts'
   end
+  
+  get '/video-posts/:id/edit' do
+    @video = VideoPost.find(params[:id])
+    
+    erb :'video_posts/edit'
+  end
 end
