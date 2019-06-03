@@ -35,6 +35,7 @@ class VideoPostsController < ApplicationController
   end
   
   post '/video-posts/:id/delete' do
+    user = User.find(params[:id])
     user.created_video_posts.destroy(VideoPost.find(params[:id]))
     user.save
     
