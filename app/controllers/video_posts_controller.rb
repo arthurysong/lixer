@@ -60,11 +60,23 @@ class VideoPostsController < ApplicationController
   end
   
   post '/video-posts/:id' do
-    @videopost = VideoPost.find(params[:id])
+    videopost = VideoPost.find(params[:id])
     if params["title"] == "" && params["video_link"] == ""
       flash[:message] = "Please fill in at least one thing to edit"
       
-      redirect "/video-posts/#{@videopost.id}/edit"
+      redirect "/video-posts/#{params[:id]}/edit"
+    else
+      
+      if params["title"] != ""
+        videopost.title = params["title"]
+        videopost.save
+      end
+      if params["video_link"] != ""
+        videopost.video_link = params["video_link"]
+        videopost.save
+      end
+      
+      redirect "/video-posts/#{params[:id]}"
     end
   end
 end
