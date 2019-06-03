@@ -1,7 +1,14 @@
 <a href="/video-posts">Back to Feed</a>
-<h2><%= @videopost.title %></h2>
-<h3><%= @videopost.video_link %></h3>
 
+<div id="showVideoPost">
+  <h2><%= @videopost.title %></h2>
+  <h3><%= @videopost.video_link %></h3>
+  <iframe width="500" height="300" src="<%= @videopost.video_link %>">
+    </iframe>
+</div>
+
+<div id="videoPostInteractions">
+  
 <% if logged_in?%>
   <form action="/video-posts/<%= @videopost.id %>/like" method="POST">
     <input type="submit" value="Like Video Post">
@@ -15,3 +22,5 @@
     <a href="/video-posts/<%= @videopost.id %>/edit">Edit Video Post</a>
   <% end %>
 <% end %>
+
+</div>

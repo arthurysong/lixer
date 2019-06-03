@@ -2,9 +2,7 @@ body {
   font-family: Arial;
 }
 
-#userNav {
-  margin-top: 20px;  
-}
+
 
 #userNav a {
   padding: 0 10px;
@@ -12,7 +10,7 @@ body {
 
 #container {
   width: 900px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 ul {
@@ -45,4 +43,16 @@ input[type=submit] {
   width: auto;
   padding: 12px 20px;
   margin: 0 auto;
+}
+
+#videoPostInteractions form {
+  display: inline-block;
+}
+
+#videoPostInteractions a {
+  padding: 12px 20px;
+}
+
+#showVideoPost iframe {
+  margin: 20px 0px;
 }
