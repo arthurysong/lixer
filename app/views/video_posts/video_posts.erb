@@ -5,12 +5,14 @@
 <h2>Lixer Feed</h2>
 
 <% if logged_in? %>
-<h3>Welcome, <%= @user.username %>
-<br>
+<h3>Welcome, <%= @user.username %></h3>
 <a href="/logout">Log Out</a>
 <br>
 <a href="/video-posts/new">Create Post</a>
-</h3>
+<br>
+<a href="/video-posts/liked-video-posts">My Liked Videos</a>
+<br>
+<a href="/video-posts/created-video-posts">My Created Video Posts</a>
 <% else %>
 <a href="/login">Log In</a>
 <br>

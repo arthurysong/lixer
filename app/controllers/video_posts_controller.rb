@@ -82,4 +82,12 @@ class VideoPostsController < ApplicationController
       redirect "/video-posts/#{params[:id]}"
     end
   end
+  
+  get '/video-posts/liked-video-posts' do
+    
+  end
+  
+  get '/video-posts/created-video-posts' do
+    
+  end
 end
