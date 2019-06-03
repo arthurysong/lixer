@@ -1,9 +1,18 @@
 <head>
   
 </head>
-<h2><%= @user.username %>'s Created Video Posts</h2>
+<h2><%= @user.username %>'s created Video Posts</h2>
 <ul>
   <% @user.created_video_posts.each do |video_post| %>
-  <li><a href="/video-posts/<%= video_post.id %>"><%= video_post.title %></a></li>
+  
+  <li>
+    <div class="video-post">
+      <iframe width="200" height="130" src="<%= video_post.video_link %>">
+      </iframe>
+      <a href="/video-posts/<%= video_post.id %>"><%= video_post.title %></a>
+    </div>
+  </li>
+
   <% end %>
 </ul>
+

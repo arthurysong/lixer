@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do 
-    erb :index
+    redirect '/video-posts'
   end
   
   helpers do
