@@ -1,5 +1,6 @@
 body {
   font-family: Arial;
+  background-color: #E8E8E8;
 }
 
 #userNav a {
@@ -7,10 +8,11 @@ body {
 }
 
 #container {
+  background-color: #FFFFFF;
   width: 900px;
   margin: 0 auto;
   padding: 0px 30px 30px 30px;
-  border: 1px solid black;
+  border: 1px solid #BEBEBE;
 }
 
 ul {
