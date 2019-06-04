@@ -5,4 +5,8 @@
   <% end %>
 </ul>
 
+<% if @user.liked_video_posts.empty? %>
+  <p>You have not liked any videos.</p>
+<% end %>
+
 <div style="clear: both"></div>

@@ -16,4 +16,8 @@
   <% end %>
 </ul>
 
+<% if @user.created_video_posts.empty? %>
+  <p>You have not created any videos.</p>
+<% end %>
+
 <div style="clear: both"></div>
