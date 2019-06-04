@@ -20,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run 'shotgun' in console.
+Open browser to the ip address provided.
+Create an account/Sign in.
+Create, like, edit, destroy, or view Video Posts.
+Logout.
 
 ## Development
 
