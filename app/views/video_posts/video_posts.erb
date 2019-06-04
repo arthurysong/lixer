@@ -27,7 +27,7 @@
   <% VideoPost.all.each do |videopost| %>
   <li>
     <div class="video-post">
-      <iframe width="200" height="130" src="<%= videopost.video_link %>">
+      <iframe allowfullscreen="true" width="200" height="130" src="<%= videopost.video_link %>">
   </iframe>
       <a href="/video-posts/<%= videopost.id %>"><%= videopost.title %></a>
       <br>
