@@ -1,8 +1,6 @@
 # Lixer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lixer`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Hi, welcome to Lixer. Lixer is a Sinatra application that allows users to repost and collect their favorite videos. Users can create an account and sign in, at which point they can create their own video posts and like video posts that have been made. Users can view the videos they have liked or the videos they have created. Video posts can be edited and deleted by the creators. Enjoy! 
 
 ## Installation
 
