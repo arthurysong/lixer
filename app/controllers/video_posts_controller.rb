@@ -77,6 +77,10 @@ class VideoPostsController < ApplicationController
   
   post '/video-posts/:id' do
     videopost = VideoPost.find(params[:id])
+    if current_user != videopost.creator
+      redirect "/video-posts"  
+    end
+    
     if params["title"] == "" && params["video_link"] == ""
       flash[:message] = "Please fill in at least one thing to edit"
       
