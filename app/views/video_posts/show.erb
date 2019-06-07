@@ -11,7 +11,14 @@
   
 <% if logged_in?%>
   <form action="/video-posts/<%= @videopost.id %>/like" method="POST">
-    <input type="submit" value="Like Video Post">
+    <input type="submit" value=
+    <% if @liked_video_posts.include?(@videopost) %>
+      "Unlike Video Post"
+    <% else %>
+      "Like Video Post"
+    <% end %>
+    >
+    
   </form>
   
   <% if current_user == @videopost.creator %>

@@ -43,6 +43,7 @@ class VideoPostsController < ApplicationController
   
   get '/video-posts/:id' do
     @videopost = VideoPost.find(params[:id])
+    @liked_video_posts = current_user.liked_video_posts
     
     erb :'video_posts/show'
   end
@@ -65,10 +66,18 @@ class VideoPostsController < ApplicationController
   post '/video-posts/:id/like' do
     current_user
     videopost = VideoPost.find(params[:id])
-    current_user.liked_video_posts << videopost
+    unliked = ""
+    
+    if current_user.liked_video_posts.include?(videopost)
+      current_user.liked_video_posts.delete(videopost)
+      unliked = "un"
+    else
+      current_user.liked_video_posts << videopost
+    end
+
     current_user.save
     
-    flash[:message] = "Successfully liked '#{videopost.title}'"
+    flash[:message] = "Successfully #{unliked}liked '#{videopost.title}'"
     redirect '/video-posts'
   end
   
