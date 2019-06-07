@@ -8,11 +8,9 @@ class VideoPostsController < ApplicationController
   end
   
   get '/video-posts/new' do
-    if logged_in?
-      erb :'video_posts/new'
-    else
-      redirect '/login'
-    end
+    redirect_if_not_logged_in
+   
+    erb :'video_posts/new'
   end
   
   post '/video-posts' do
@@ -30,23 +28,17 @@ class VideoPostsController < ApplicationController
   
     
   get '/video-posts/liked-video-posts' do
-    if logged_in?
-      @user = current_user
-      
-      erb :'video_posts/liked_video_posts'
-    else
-      redirect '/login'
-    end
+    redirect_if_not_logged_in
+    
+    @user = current_user
+    erb :'video_posts/liked_video_posts'
   end
   
   get '/video-posts/created-video-posts' do
-    if logged_in?
-      @user = current_user
-      
-      erb :'video_posts/created_video_posts'
-    else
-      redirect '/login'
-    end
+    redirect_if_not_logged_in
+    
+    @user = current_user
+    erb :'video_posts/created_video_posts'
   end
   
   get '/video-posts/:id' do
