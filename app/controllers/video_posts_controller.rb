@@ -46,7 +46,7 @@ class VideoPostsController < ApplicationController
     erb :'video_posts/show'
   end
   
-  post '/video-posts/:id/delete' do
+  delete '/video-posts/:id/delete' do
     current_user
     videopost = VideoPost.find(params[:id])
     

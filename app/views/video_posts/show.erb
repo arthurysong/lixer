@@ -16,6 +16,7 @@
   
   <% if current_user == @videopost.creator %>
     <form action="/video-posts/<%= @videopost.id %>/delete" method="POST">
+      <input type="hidden" id="hidden" name="_method" value="delete">
       <input type="submit" value="Delete Video Post">
     </form>
     
