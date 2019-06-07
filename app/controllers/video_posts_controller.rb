@@ -19,9 +19,8 @@ class VideoPostsController < ApplicationController
       redirect '/video-posts/new'
     end
     
-    user = current_user
     videopost = VideoPost.create(params)
-    videopost.creator = user
+    videopost.creator = current_user
     videopost.save
     redirect "/video-posts/#{videopost.id}"
   end
@@ -48,24 +47,25 @@ class VideoPostsController < ApplicationController
   end
   
   post '/video-posts/:id/delete' do
-    user = current_user
+    current_user
     videopost = VideoPost.find(params[:id])
+    
     if current_user != videopost.creator
       redirect '/video-posts'
     end
     
-    user.created_video_posts.destroy(VideoPost.find(params[:id]))
-    user.save
+    current_user.created_video_posts.destroy(params[:id])
+    current_user.save
     
     flash[:message] = "Successfully deleted video"
     redirect '/video-posts'
   end
   
   post '/video-posts/:id/like' do
-    user = current_user
+    current_user
     videopost = VideoPost.find(params[:id])
-    user.liked_video_posts << videopost
-    user.save
+    current_user.liked_video_posts << videopost
+    current_user.save
     
     flash[:message] = "Successfully liked '#{videopost.title}'"
     redirect '/video-posts'
