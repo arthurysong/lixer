@@ -4,6 +4,7 @@ class VideoPostsController < ApplicationController
       @user = current_user
     end
     
+    @videoposts = VideoPost.all
     erb :'video_posts/video_posts'
   end
   

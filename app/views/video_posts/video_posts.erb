@@ -24,7 +24,7 @@
 <h2>Lixer Feed</h2>
 <p>Repost and Collect Your Favorite Videos!</p>
 <ul>
-  <% VideoPost.all.each do |videopost| %>
+  <% @videoposts.each do |videopost| %>
   <li>
     <div class="video-post">
       <iframe allowfullscreen="true" width="200" height="130" src="<%= videopost.video_link %>">
@@ -37,7 +37,7 @@
   <% end %>
 </ul>
 
-<% if VideoPost.all.empty? %>
+<% if @videoposts.empty? %>
   <p>There are no videos.</p>
 <% end %>
 
