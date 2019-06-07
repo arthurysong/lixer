@@ -6,6 +6,7 @@
 <h3>'<%= @videopost.title %>'</h3>
 <h3>Link: <%= @videopost.video_link %></h3>
 <form action="/video-posts/<%= @videopost.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
   <label for="title">New Title: </label>
   <input type="text" name="title" id="title">
   <br>

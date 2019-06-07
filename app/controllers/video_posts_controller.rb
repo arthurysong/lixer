@@ -80,7 +80,7 @@ class VideoPostsController < ApplicationController
     erb :'video_posts/edit'
   end
   
-  post '/video-posts/:id' do
+  patch '/video-posts/:id' do
     videopost = VideoPost.find(params[:id])
     if current_user != videopost.creator
       redirect "/video-posts"  
