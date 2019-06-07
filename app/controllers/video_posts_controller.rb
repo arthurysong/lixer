@@ -49,6 +49,11 @@ class VideoPostsController < ApplicationController
   
   post '/video-posts/:id/delete' do
     user = current_user
+    videopost = VideoPost.find(params[:id])
+    if current_user != videopost.creator
+      redirect '/video-posts'
+    end
+    
     user.created_video_posts.destroy(VideoPost.find(params[:id]))
     user.save
     
