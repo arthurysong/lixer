@@ -8,4 +8,6 @@ class VideoPost < ActiveRecord::Base
            :through => :user_video_posts,
            :source => :liker,
            :inverse_of => :liked_video_posts
+
+  mount_uploader :video, VideoUploader
 end
