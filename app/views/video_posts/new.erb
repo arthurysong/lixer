@@ -3,12 +3,12 @@
   <%= flash[:message] %>
 <% end %>
 
-<form action="/video-posts" method="POST">
+<form action="/video-posts" method="POST" enctype="multipart/form-data">
   <label for="title">Title: </label>
   <input type="text" name="title" id="title">
   <br>
-  <label for="video_file">Upload File</label>
-  <input type="file" name="video_file" id="video_file">
+  <label for="video">Upload File</label>
+  <input type="file" name="video" id="video">
   <br>
   <label for="video_link">Link of Video:</label>
   <input type="text" name="video_link" id="video_link">

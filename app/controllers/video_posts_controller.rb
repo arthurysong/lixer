@@ -15,11 +15,23 @@ class VideoPostsController < ApplicationController
   end
   
   post '/video-posts' do
-    if params["title"] == "" || params["video_link"] == ""
-      flash[:message] = "Please enter a title and video link."
+    binding.pry
+
+    if params["title"] == "" || params["video"] == "" || params["video_link"] == ""
+      flash[:message] = "Please enter a title, video file and video link."
       redirect '/video-posts/new'
     end
+
+    binding.pry
     
+    filename = params["video"]["filename"]
+    file = params["video"]["tempfile"]
+
+    File.open("./public/#{filename}", 'wb') do |f|
+      f.write(file.read)
+    end
+
+
     videopost = VideoPost.create(params)
     videopost.creator = current_user
     videopost.save
