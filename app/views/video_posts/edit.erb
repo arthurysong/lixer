@@ -4,14 +4,10 @@
 
 <h2>Edit Video</h2>
 <h3>'<%= @videopost.title %>'</h3>
-<h3>Link: <%= @videopost.video_link %></h3>
 <form action="/video-posts/<%= @videopost.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <label for="title">New Title: </label>
   <input type="text" name="title" id="title">
-  <br>
-  <label for="video_link">New Link: </label>
-  <input type="text" name="video_link" id="video_link">
   <br>
   <input type="submit" value="Edit Video">
 </form>

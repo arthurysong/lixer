@@ -4,7 +4,7 @@ class VideoPostsController < ApplicationController
       @user = current_user
     end
 
-    binding.pry
+    # binding.pry
     
     @videoposts = VideoPost.all
     erb :'video_posts/video_posts'
@@ -17,7 +17,7 @@ class VideoPostsController < ApplicationController
   end
   
   post '/video-posts' do
-    binding.pry
+    # binding.pry
 
     if params["title"] == "" || params["video"] == "" || params["video_link"] == ""
       flash[:message] = "Please enter a title, video file and video link."
@@ -55,7 +55,7 @@ class VideoPostsController < ApplicationController
   get '/video-posts/:id' do
     @videopost = VideoPost.find(params[:id])
     @liked_video_posts = current_user.liked_video_posts
-    binding.pry
+    # binding.pry
     
     erb :'video_posts/show'
   end
@@ -108,20 +108,14 @@ class VideoPostsController < ApplicationController
       redirect "/video-posts"  
     end
     
-    if params["title"] == "" && params["video_link"] == ""
-      flash[:message] = "Please fill in at least one thing to edit"
+    if params["title"] == ""
+      flash[:message] = "Please fill in new title"
       
       redirect "/video-posts/#{params[:id]}/edit"
     else
       
-      if params["title"] != ""
-        videopost.title = params["title"]
-        videopost.save
-      end
-      if params["video_link"] != ""
-        videopost.video_link = params["video_link"]
-        videopost.save
-      end
+      videopost.title = params["title"]
+      videopost.save
       
       redirect "/video-posts/#{params[:id]}"
     end
