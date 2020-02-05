@@ -2,7 +2,6 @@
 
 <div id="showVideoPost">
   <h2><%= @videopost.title %></h2>
-  <h3><%= @videopost.video_link %></h3>
   <video width="720" height="480" controls>
     <source src="<%= @videopost.video_url %>" type="video/mp4">
   </video>
