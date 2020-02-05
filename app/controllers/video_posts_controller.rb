@@ -24,13 +24,12 @@ class VideoPostsController < ApplicationController
 
     binding.pry
     
-    filename = params["video"]["filename"]
-    file = params["video"]["tempfile"]
+    # filename = params["video"]["filename"]
+    # file = params["video"]["tempfile"]
 
-    File.open("./public/#{filename}", 'wb') do |f|
-      f.write(file.read)
-    end
-
+    # File.open("./public/#{filename}", 'wb') do |f|
+    #   f.write(file.read)
+    # end
 
     videopost = VideoPost.create(params)
     videopost.creator = current_user
