@@ -19,6 +19,10 @@ ul {
   list-style: none;
 }
 
+video {
+  padding: 20px 10px;
+}
+
 div .video-post {
   clear: left;
   padding: 10px 0;
