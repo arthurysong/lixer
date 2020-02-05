@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200201182228) do
+ActiveRecord::Schema.define(version: 20200205144822) do
 
   create_table "user_video_posts", force: :cascade do |t|
     t.integer "user_id"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20200201182228) do
 
   create_table "video_posts", force: :cascade do |t|
     t.string  "title"
-    t.string  "video_link"
     t.integer "creator_id"
     t.string  "video"
   end
