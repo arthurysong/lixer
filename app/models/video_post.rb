@@ -1,5 +1,6 @@
 require_relative '../uploaders/video_uploader'
-require 'carrierwave/orm/activerecord'
+
+# require 'carrierwave/orm/activerecord'
 
 class VideoPost < ActiveRecord::Base
   belongs_to :creator, 
