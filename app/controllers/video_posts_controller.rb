@@ -3,6 +3,8 @@ class VideoPostsController < ApplicationController
     if logged_in? 
       @user = current_user
     end
+
+    binding.pry
     
     @videoposts = VideoPost.all
     erb :'video_posts/video_posts'
@@ -53,6 +55,7 @@ class VideoPostsController < ApplicationController
   get '/video-posts/:id' do
     @videopost = VideoPost.find(params[:id])
     @liked_video_posts = current_user.liked_video_posts
+    binding.pry
     
     erb :'video_posts/show'
   end

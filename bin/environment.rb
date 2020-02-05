@@ -1,3 +1,5 @@
+# require_relative '../public/load_carrierwave'
+
 ENV['SINATRA_ENV'] ||= "development"
 
 require 'bundler/setup'
