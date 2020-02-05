@@ -21,8 +21,6 @@ class VideoPostsController < ApplicationController
       flash[:message] = "Please enter a title, video file and video link."
       redirect '/video-posts/new'
     end
-
-    binding.pry
     
     # filename = params["video"]["filename"]
     # file = params["video"]["tempfile"]

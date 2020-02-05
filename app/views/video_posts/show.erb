@@ -5,6 +5,9 @@
   <h3><%= @videopost.video_link %></h3>
   <iframe allowfullscreen="true" height="378" width="620" src="<%= @videopost.video_link %>">
     </iframe>
+  <video width="320" height="240" controls>
+    <source src="<%= @videopost.video.url %>" type="video/mp4">
+  </video>
 </div>
 
 <div id="videoPostInteractions">
