@@ -19,7 +19,7 @@ ul {
   list-style: none;
 }
 
-video {
+.main-video {
   padding: 20px 10px;
 }
 
@@ -28,7 +28,7 @@ div .video-post {
   padding: 10px 0;
 }
 
-.video-post iframe {
+.video-post video {
   float: left;
   margin-right: 20px;
 }
