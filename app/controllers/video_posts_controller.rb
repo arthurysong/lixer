@@ -54,7 +54,9 @@ class VideoPostsController < ApplicationController
   
   get '/video-posts/:id' do
     @videopost = VideoPost.find(params[:id])
-    @liked_video_posts = current_user.liked_video_posts
+    if logged_in?
+      @liked_video_posts = current_user.liked_video_posts
+    end
     # binding.pry
     
     erb :'video_posts/show'

@@ -27,8 +27,8 @@
   <% @videoposts.each do |videopost| %>
   <li>
     <div class="video-post">
-      <video width="200" height="130" controls>
-        <source src="<%= videopost.video_url %>" type="video/mp4">
+      <video id="player" width="200" height="130" controls>
+        <source src="<%= videopost.video_url %>#t=0.5" type="video/mp4">
       </video>
       <a href="/video-posts/<%= videopost.id %>"><%= videopost.title %></a>
       <br>

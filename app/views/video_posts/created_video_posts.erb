@@ -7,8 +7,9 @@
   
   <li>
     <div class="video-post">
-      <iframe width="200" height="130" src="<%= video_post.video_link %>">
-      </iframe>
+        <video width="200" height="130" controls>
+        <source src="<%= videopost.video_url %>" type="video/mp4">
+      </video>
       <a href="/video-posts/<%= video_post.id %>"><%= video_post.title %></a>
     </div>
   </li>
