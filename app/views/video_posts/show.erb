@@ -5,6 +5,8 @@
   <video class="main-video" width="720" height="480" controls>
     <source src="<%= @videopost.video_url %>#t=0.5" type="video/mp4">
   </video>
+  <p id="date"><%= @videopost.created_at.strftime('%b %e, %Y') %></p>
+  <p><%= @videopost.description %></p>
 </div>
 
 <div id="videoPostInteractions">

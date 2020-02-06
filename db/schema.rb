@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200205144822) do
+ActiveRecord::Schema.define(version: 20200206114222) do
 
   create_table "user_video_posts", force: :cascade do |t|
     t.integer "user_id"
@@ -25,9 +25,11 @@ ActiveRecord::Schema.define(version: 20200205144822) do
   end
 
   create_table "video_posts", force: :cascade do |t|
-    t.string  "title"
-    t.integer "creator_id"
-    t.string  "video"
+    t.string   "title"
+    t.integer  "creator_id"
+    t.string   "video"
+    t.string   "description"
+    t.datetime "created_at",  default: '2020-02-06 19:48:31'
   end
 
 end
