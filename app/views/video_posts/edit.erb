@@ -2,7 +2,7 @@
   <%= flash[:message] %>
 <% end %>
 
-<h2>Edit Video</h2>
+<h1>Edit Video</h1>
 <h3>'<%= @videopost.title %>'</h3>
 <form action="/video-posts/<%= @videopost.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
