@@ -7,6 +7,8 @@
         <source src="<%= video_post.video_url %>#t=0.5" type="video/mp4">
       </video>
       <a href="/video-posts/<%= video_post.id %>"><%= video_post.title %></a>
+      <p id="date"><%= video_post.created_at.strftime('%b %e, %Y') %></p>
+      <p><%= video_post.creator.username %></p>
     </div>
   </li>
   <% end %>

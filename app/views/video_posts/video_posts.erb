@@ -30,8 +30,8 @@
       <video id="player" width="320" height="180" controls>
         <source src="<%= videopost.video_url %>#t=0.5" type="video/mp4">
       </video>
-      <a href="/video-posts/<%= videopost.id %>"><%= videopost.title %></a>
-      <br>
+      <a href="/video-posts/<%= videopost.id %>"><%= videopost.title %></a>      
+      <p id="date"><%= videopost.created_at.strftime('%b %e, %Y') %></p>
       <p><%= videopost.creator.username %></p>
     </div>
   </li>
