@@ -11,6 +11,7 @@
         <source src="<%= video_post.video_url %>" type="video/mp4">
       </video>
       <a href="/video-posts/<%= video_post.id %>"><%= video_post.title %></a>
+      <p id="date"><%= video_post.created_at.strftime('%b %e, %Y') %></p>
     </div>
   </li>
 
