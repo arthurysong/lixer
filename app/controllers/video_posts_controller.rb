@@ -33,6 +33,7 @@ class VideoPostsController < ApplicationController
 
     videopost = VideoPost.create(params)
     videopost.creator = current_user
+    videopost.created_at = DateTime.now
     videopost.save
     redirect "/video-posts/#{videopost.id}"
   end
