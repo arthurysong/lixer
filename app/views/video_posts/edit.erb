@@ -1,16 +1,17 @@
-<% if flash.has?(:message) %>
-  <%= flash[:message] %>
-<% end %>
 <a href="/video-posts">Back to Feed</a>
 
 <h1>Edit Video</h1>
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <h3>'<%= @videopost.title %>'</h3>
-<form action="/video-posts/<%= @videopost.id %>" method="POST">
+<form id="edit-form" action="/video-posts/<%= @videopost.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <label for="title">New Title: </label>
   <input type="text" name="title" id="title">
   <br>
-  <textarea rows="3" cols="60" name="description" id="description" from="new-form" placeholder="Enter New Description Here..."></textarea>
+  <textarea rows="3" cols="60" name="description" id="description" from="edit-form" placeholder="Enter New Description Here..."></textarea>
   <br>
   <input type="submit" value="Edit Video">
 </form>

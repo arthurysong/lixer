@@ -111,13 +111,18 @@ class VideoPostsController < ApplicationController
       redirect "/video-posts"  
     end
     
-    if params["title"] == ""
-      flash[:message] = "Please fill in new title"
+    if params["title"] == "" && params["description"] == ""
+      flash[:message] = "Please fill at least one thing to edit"
       
       redirect "/video-posts/#{params[:id]}/edit"
     else
-      
-      videopost.title = params["title"]
+      if params["title"] != ""
+        videopost.title = params["title"]
+      end
+      if params["description"] != ""
+        videopost.description = params["description"]
+      end
+
       videopost.save
       
       redirect "/video-posts/#{params[:id]}"
