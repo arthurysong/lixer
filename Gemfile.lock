@@ -53,7 +53,7 @@ GEM
       actionpack (>= 1.4.0)
       activerecord (>= 1.6.0)
       rake (>= 0.4.15)
-    rake (12.3.2)
+    rake (12.3.3)
     rdoc (6.2.1)
     require_all (2.0.0)
     ripl (0.7.1)
