@@ -54,7 +54,7 @@ GEM
       activerecord (>= 1.6.0)
       rake (>= 0.4.15)
     rake (12.3.2)
-    rdoc (6.2.1)
+    rdoc (6.3.1)
     require_all (2.0.0)
     ripl (0.7.1)
       bond (~> 0.5.1)
